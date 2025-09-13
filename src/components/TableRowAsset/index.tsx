@@ -12,7 +12,7 @@ import {
   useMediaIndex
 } from '@sanity/ui'
 import formatRelative from 'date-fns/formatRelative'
-import filesize from 'filesize'
+import {filesize} from 'filesize'
 import {
   memo,
   type MouseEvent,
@@ -70,18 +70,18 @@ const ContainerGrid = styled<
   `
 })
 
-const ContextActionContainer = styled<typeof Flex, {$scheme: ThemeColorSchemeKey}>(Flex)(
-  ({$scheme}) => {
-    return css`
-      cursor: pointer;
-      @media (hover: hover) and (pointer: fine) {
-        &:hover {
-          background: ${getSchemeColor($scheme, 'bg2')};
-        }
+const ContextActionContainer = styled<typeof Flex, {$scheme: ThemeColorSchemeKey}>(Flex)(({
+  $scheme
+}) => {
+  return css`
+    cursor: pointer;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background: ${getSchemeColor($scheme, 'bg2')};
       }
-    `
-  }
-)
+    }
+  `
+})
 
 const StyledWarningIcon = styled(WarningFilledIcon)(({theme}) => {
   return {
@@ -89,7 +89,6 @@ const StyledWarningIcon = styled(WarningFilledIcon)(({theme}) => {
   }
 })
 
-// eslint-disable-next-line complexity
 const TableRowAsset = (props: Props) => {
   const {id, selected} = props
 

@@ -34,7 +34,6 @@ const StyledItemContainer = styled.div`
 `
 
 const ItemContainer = forwardRef<HTMLDivElement, any>((props, ref) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- we're doing this to avoid sc warnings about `context` passed as an attribute
   const {context, ...rest} = props
   return <StyledItemContainer ref={ref} {...rest} />
 })
@@ -48,7 +47,6 @@ const StyledListContainer = styled.div`
 `
 
 const ListContainer = forwardRef<HTMLDivElement, any>((props, ref) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- we're doing this to avoid sc warnings about `context` passed as an attribute
   const {context, ...rest} = props
   return <StyledListContainer ref={ref} {...rest} />
 })
